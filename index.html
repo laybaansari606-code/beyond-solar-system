@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#03040a" />
+  <title>BEYOND — Solar System Explorer</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="space"></div>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <header class="topbar">
+    <a href="#" class="logo">
+      <span class="logo-mark">✳</span>
+      BEYOND<span class="logo-dot">.</span>
+    </a>
+
+    <div class="topbar-center">
+      SOLAR SYSTEM <span class="separator">/</span> EXPLORATION MODE
+    </div>
+
+    <button id="soundButton" class="sound-button" aria-label="Toggle ambient sound">
+      <span class="sound-icon">♪</span>
+      <span id="soundLabel">SOUND OFF</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div class="eyebrow"><span class="live-dot"></span> A JOURNEY THROUGH SPACE</div>
+      <h1>THE UNIVERSE<br />IS <span>YOURS.</span></h1>
+      <p class="intro-copy">
+        Eight planets. One star. Infinite wonder.<br />
+        Move through our cosmic neighbourhood.
+      </p>
+
+      <button id="exploreButton" class="explore-button">
+        <span>EXPLORE THE SYSTEM</span>
+        <span class="button-arrow">↘</span>
+      </button>
+    </section>
+
+    <div class="scene-label">
+      <span class="scene-label-line"></span>
+      <span id="sceneLabel">SOL SYSTEM / 001</span>
+    </div>
+
+    <section class="planet-panel" id="planetPanel">
+      <div class="panel-topline">
+        <span id="planetIndex">PLANET 03 / 08</span>
+        <span class="status"><span class="live-dot"></span> LIVE ORBIT</span>
+      </div>
+
+      <div class="planet-heading">
+        <div class="planet-number" id="planetNumber">03</div>
+        <div>
+          <div class="planet-kicker" id="planetKicker">THE BLUE WORLD</div>
+          <h2 id="planetName">EARTH</h2>
+        </div>
+      </div>
+
+      <p id="planetDescription" class="planet-description">
+        Our pale blue dot. The only world we know to harbour life.
+      </p>
+
+      <div class="planet-stats">
+        <div class="stat">
+          <span class="stat-label">DIAMETER</span>
+          <span class="stat-value" id="planetDiameter">12,742 km</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">DAY LENGTH</span>
+          <span class="stat-value" id="planetDay">24 hours</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">SUN DISTANCE</span>
+          <span class="stat-value" id="planetDistance">149.6M km</span>
+        </div>
+      </div>
+
+      <div class="planet-fact">
+        <span class="fact-symbol">✦</span>
+        <p id="planetFact">Earth is the only known planet with stable bodies of liquid water on its surface.</p>
+      </div>
+
+      <div class="panel-controls">
+        <button id="previousPlanet" class="circle-button" aria-label="Previous planet">←</button>
+        <div class="planet-progress" id="planetProgress"></div>
+        <button id="nextPlanet" class="circle-button" aria-label="Next planet">→</button>
+      </div>
+
+      <button id="overviewButton" class="overview-button">
+        <span>↗</span> RETURN TO OVERVIEW
+      </button>
+    </section>
+
+    <section class="planet-selector" aria-label="Choose a planet">
+      <div class="selector-heading">SELECT A WORLD</div>
+      <div class="planet-list" id="planetList"></div>
+    </section>
+  </main>
+
+  <footer class="bottom-bar">
+    <div class="footer-left">
+      <span class="footer-coordinates" id="coordinates">0° 00' 00" N</span>
+      <span class="footer-divider"></span>
+      <span>DEEP SPACE TRANSMISSION</span>
+    </div>
+
+    <div class="footer-right">
+      <span class="scroll-hint">MOVE YOUR CURSOR TO NAVIGATE</span>
+      <span class="mouse-icon">⌖</span>
+    </div>
+  </footer>
+
+  <div id="loadingScreen" class="loading-screen">
+    <div class="loading-brand">BEYOND<span>.</span></div>
+    <div class="loading-track"><div class="loading-fill"></div></div>
+    <p>PREPARING YOUR JOURNEY</p>
+  </div>
+
+  <div id="tooltip" class="tooltip"></div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
